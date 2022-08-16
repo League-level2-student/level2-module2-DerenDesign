@@ -1,5 +1,6 @@
 package _06_overloading;
 
+import java.awt.Component;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -16,18 +17,45 @@ import javax.swing.JPanel;
  * GOAL: Create your own custom pop-up messages
  */
 public class LeagueOptionPane {
+	JFrame frame = new JFrame();
+	JPanel panel = new JPanel();
+	JLabel label = new JLabel("The League is the Best");
+	JLabel label2 = new JLabel();
+	ImageIcon icon = new ImageIcon();
+	public void run() {
 	
+	label2.setIcon(loadImage("league.png"));
+	panel.add(label2);
+	panel.add(label);
+	frame.add(panel);
+	frame.setTitle("Message");
+	frame.setVisible(true);
+	frame.pack();
+	
+	}
 	public static void showMessageDialog(String message) {
+		JFrame frame = new JFrame();
+		JPanel panel = new JPanel();
+		JLabel label = new JLabel(message);
+		JLabel label2 = new JLabel();
+		ImageIcon icon = new ImageIcon();
+		
+		label2.setIcon(loadImage("league.png"));
+		panel.add(label2);
+		panel.add(label);
+		frame.add(panel);
+		frame.setTitle("Message");
+		frame.setVisible(true);
+		frame.pack();
 		// 1. Open example.png and make a GUI that looks like that
 		//    The message parameter is what we want to show on our pop-up
-		
-		
 		// 2. Uncomment the line of code below. It sets the location of our frame to the center of the screen
-		//frame.setLocationRelativeTo(null);
+		frame.setLocationRelativeTo(null);
+		
+		
 	}
 	
 	// 3. Call this method in the Runner class
-	
 
 	// 4. Create another showMessageDialog() method that lets us also choose the Message and Title 
 	//    2 String parameters (one for the message and one for the title)

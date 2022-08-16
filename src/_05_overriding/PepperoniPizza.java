@@ -5,7 +5,15 @@ package _05_overriding;
  */
 public class PepperoniPizza extends Pizza {
 	// 1. Copy the show() method from Pizza, but change it so it shows a Pepperoni Pizza 
-	
+	@Override
+	public void show() {
+		frame.setTitle("Pepperoni Pizza");
+		label.setIcon(loadImage("pepperoniPizza.png"));
+	}
+	@Override
+	public void receipt() {
+		System.out.println("You purchased a Pepperoni pizza for $12");	
+	}
 	// 2. Add @Override above the method
 	//	  This helps with preventing errors(you can ask your teacher for further explanation)
 	
