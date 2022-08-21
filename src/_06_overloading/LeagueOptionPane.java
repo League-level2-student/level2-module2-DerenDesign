@@ -54,6 +54,38 @@ public class LeagueOptionPane {
 		
 		
 	}
+	public static void showMessageDialog(String message, String title) {
+		JFrame frame = new JFrame();
+		JPanel panel = new JPanel();
+		JLabel label = new JLabel(message);
+		JLabel label2 = new JLabel();
+		ImageIcon icon = new ImageIcon();
+		
+		label2.setIcon(loadImage("league.png"));
+		panel.add(label2);
+		panel.add(label);
+		frame.add(panel);
+		frame.setTitle(title);
+		frame.setVisible(true);
+		frame.pack();
+		frame.setLocationRelativeTo(null);
+	}
+	public static void showMessageDialog(String message, String title, String image) {
+		JFrame frame = new JFrame();
+		JPanel panel = new JPanel();
+		JLabel label = new JLabel(message);
+		JLabel label2 = new JLabel();
+		ImageIcon icon = new ImageIcon();
+		
+		label2.setIcon(loadImage(image));
+		panel.add(label2);
+		panel.add(label);
+		frame.add(panel);
+		frame.setTitle(title);
+		frame.setVisible(true);
+		frame.pack();
+		frame.setLocationRelativeTo(null);
+	}
 	
 	// 3. Call this method in the Runner class
 
